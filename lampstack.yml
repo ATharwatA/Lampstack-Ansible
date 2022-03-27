@@ -1,0 +1,38 @@
+---
+- hosts: target
+  remote_user: root
+  become: yes
+
+  tasks:
+  - name: Installing Apache, PHP and MySql
+    yum:
+      name:
+        - httpd
+        - mariadb-server
+        - php
+      state: installed
+
+
+  - name: Enabling and Starting httpd service
+    service:
+      name: httpd
+      enabled: yes
+      state: started
+
+
+  - name: Copying the PHP page
+    copy:
+       src: /etc/ansible/index.php
+       dest: /var/www/html/index.php
+       force: yes
+       
+
+
+  - name: Enabling and Starting MySql service
+    service:
+      name: mariadb
+      enabled: yes
+      state: started
+
+
+
