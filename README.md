@@ -5,7 +5,9 @@ This is a Ansible Playbook to deploy a LAMP Stack infrastructure on Centos 7 hos
 
 # Stack
 •	apache
+
 •	mysql
+
 •	php
 
 
