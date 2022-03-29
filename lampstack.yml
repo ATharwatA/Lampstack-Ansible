@@ -48,7 +48,7 @@
       port: 443/tcp
       state: enabled
 
-  - name: 
+  - name: Testing PHP
     uri:
       url: http://192.168.10.129/index.php
       status_code: 200
